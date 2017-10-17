@@ -15,7 +15,7 @@ namespace ctci.Library
             public NodeInfo Parent, Left, Right;
         }
 
-        public static void Print(this TreeNode root, int topMargin = 2, int leftMargin = 2)
+        public static void Print(this TreeNode root, int topMargin = 0, int leftMargin = 0)
         {
             if (root == null) return;
             int rootTop = Console.CursorTop + topMargin;

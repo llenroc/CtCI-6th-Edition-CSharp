@@ -1,10 +1,11 @@
 ﻿using ctci.Contracts;
 using ctci.Library;
 using System;
+using System.Linq;
 
 namespace Chapter04
 {
-    public class Q4_02_CreateMinimalBSTfromSortedUniqueArray: Question
+    public class Q4_02_CreateMinimalBSTfromSortedUniqueArray : Question
     {
         public static TreeNode Create(params int[] sortedArray)
         {
@@ -24,8 +25,17 @@ namespace Chapter04
 
         public override void Run()
         {
-            var root = Create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+            var root = Create(Enumerable.Range(1, 3).ToArray());
             BTreePrinter.Print(root);
+            XTreePrinter.Print(root);
+
+            root = Create(Enumerable.Range(1, 7).ToArray());
+            BTreePrinter.Print(root);
+            XTreePrinter.Print(root);
+
+            root = Create(Enumerable.Range(1, 30).ToArray());
+            BTreePrinter.Print(root);
+            XTreePrinter.Print(root);
         }
     }
 }
